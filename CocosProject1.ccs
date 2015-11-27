@@ -1,0 +1,116 @@
+<Solution>
+  <PropertyGroup Name="CocosProject1" Version="2.3.3.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Folder Name="Assets">
+          <Folder Name="Fonts">
+            <TTF Name="Game of Three.ttf" />
+          </Folder>
+          <Folder Name="Images">
+            <Folder Name="resources-1x">
+              <Image Name="background.png" />
+              <Image Name="button.png" />
+              <Image Name="buttonPressed.png" />
+              <Image Name="character1.png" />
+              <Image Name="character2.png" />
+              <Image Name="character3.png" />
+              <Image Name="chopstick.png" />
+              <Image Name="gameOver.png" />
+              <Image Name="life.png" />
+              <Image Name="life_bg.png" />
+              <Image Name="mat.png" />
+              <Image Name="roll.png" />
+              <Image Name="tap_left.png" />
+              <Image Name="tap_right.png" />
+              <Image Name="title.png" />
+            </Folder>
+            <Folder Name="resources-2x">
+              <Image Name="background.png" />
+              <Image Name="button.png" />
+              <Image Name="buttonPressed.png" />
+              <Image Name="character1.png" />
+              <Image Name="character2.png" />
+              <Image Name="character3.png" />
+              <Image Name="chopstick.png" />
+              <Image Name="gameOver.png" />
+              <Image Name="life.png" />
+              <Image Name="life_bg.png" />
+              <Image Name="mat.png" />
+              <Image Name="roll.png" />
+              <Image Name="tap_left.png" />
+              <Image Name="tap_right.png" />
+              <Image Name="title.png" />
+            </Folder>
+            <Folder Name="resources-3x">
+              <Image Name="background.png" />
+              <Image Name="button.png" />
+              <Image Name="buttonPressed.png" />
+              <Image Name="character1.png" />
+              <Image Name="character2.png" />
+              <Image Name="character3.png" />
+              <Image Name="chopstick.png" />
+              <Image Name="gameOver.png" />
+              <Image Name="life.png" />
+              <Image Name="life_bg.png" />
+              <Image Name="mat.png" />
+              <Image Name="roll.png" />
+              <Image Name="tap_left.png" />
+              <Image Name="tap_right.png" />
+              <Image Name="title.png" />
+            </Folder>
+            <Folder Name="resources-4x">
+              <Image Name="background.png" />
+              <Image Name="button.png" />
+              <Image Name="buttonPressed.png" />
+              <Image Name="character1.png" />
+              <Image Name="character2.png" />
+              <Image Name="character3.png" />
+              <Image Name="chopstick.png" />
+              <Image Name="gameOver.png" />
+              <Image Name="life.png" />
+              <Image Name="life_bg.png" />
+              <Image Name="mat.png" />
+              <Image Name="roll.png" />
+              <Image Name="tap_left.png" />
+              <Image Name="tap_right.png" />
+              <Image Name="title.png" />
+            </Folder>
+          </Folder>
+          <Folder Name="Ground">
+            <Image Name="08.png" />
+            <Image Name="09.png" />
+            <Image Name="10.png" />
+            <Image Name="11.png" />
+            <Image Name="12.png" />
+            <Image Name="a1.png" />
+            <Image Name="a2.png" />
+            <Image Name="a3.png" />
+            <Image Name="a4.png" />
+            <Image Name="a5.png" />
+            <Image Name="a6.png" />
+            <Image Name="a7.png" />
+          </Folder>
+          <Folder Name="Walking">
+            <Image Name="1__000.png" />
+            <Image Name="1__001.png" />
+            <Image Name="1__002.png" />
+            <Image Name="1__003.png" />
+            <Image Name="1__004.png" />
+            <Image Name="1__005.png" />
+            <Image Name="1__006.png" />
+            <Image Name="1__007.png" />
+          </Folder>
+          <Folder Name="Axe">
+            <Image Name="Axe.png" />
+            <Image Name="Axe_2.png" />
+          </Folder>
+        </Folder>
+        <Project Name="Caracter.csd" Type="Node" />
+        <Project Name="Piece.csd" Type="Node" />
+        <Project Name="Test.csd" Type="Node" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
