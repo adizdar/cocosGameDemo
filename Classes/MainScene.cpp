@@ -41,15 +41,19 @@ bool MainScene::init()
     this->initNodeReader();
 
     auto rootNode = CSLoader::createNode("MainScene.csb");
-    
+    auto gameOverSprite = rootNode->getChildByName("mat");
+    Button* playButton = static_cast<Button*>(gameOverSprite->getChildByName("play"));
+
     Size size = Director::getInstance()->getVisibleSize();
     rootNode->setContentSize(size);
     ui::Helper::doLayout(rootNode);
     
     this->initGame(rootNode);
     
+    playButton->addTouchEventListener(CC_CALLBACK_2(MainScene::onPlayBtnTap, this));
+    
     addChild(rootNode);
-
+    
     return true;
 }
 
@@ -62,7 +66,6 @@ void MainScene::onEnter()
     this->flyingPiecePosition = this->pieceNode->getPosition();
     
     this->setupTouchHandling();
-    this->onPlayBtnTap();
     this->triggerTitle();
     this->scheduleUpdate(); // trigger update loop
 }
@@ -409,24 +412,10 @@ void MainScene::animateHitPiece(Side obstacleSide)
     
 }
 
-void MainScene::onPlayBtnTap()
+void MainScene::onPlayBtnTap(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-    auto rootNode = CSLoader::createNode("MainScene.csb");
-    auto gameOverSprite = rootNode->getChildByName("mat");
-    Sprite* playButton = dynamic_cast<Sprite*>(gameOverSprite->getChildByName("play"));
-    
-    auto touchListener = EventListenerTouchOneByOne::create();
-    
-    touchListener->onTouchBegan = [&](Touch* touch, Event* event) {
-        
-        CCLOG("%s", "a");
-        
-        return true;
-    };
-    
-    _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, playButton);
-    
-   // Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, playButton);
+    this->resetGameState();
+    this->triggerReady();
 }
 
 

@@ -155,7 +155,7 @@
           <RenderColor A="255" R="144" G="238" B="144" />
         </AnimationInfo>
         <AnimationInfo Name="gameOver" StartIndex="121" EndIndex="150">
-          <RenderColor A="150" R="107" G="142" B="35" />
+          <RenderColor A="255" R="107" G="142" B="35" />
         </AnimationInfo>
       </AnimationList>
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
@@ -285,13 +285,13 @@
             <FileData Type="Normal" Path="Assets/Images/resources-2x/tap_right.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="mat" ActionTag="1791887164" Tag="25" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-447.9904" RightMargin="-448.0096" TopMargin="-421.1149" BottomMargin="-891.8851" ctype="SpriteObjectData">
+          <AbstractNodeData Name="mat" ActionTag="1791887164" Tag="25" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-447.9904" RightMargin="-448.0096" BottomMargin="-1313.0000" ctype="SpriteObjectData">
             <Size X="1536.0000" Y="2273.0000" />
             <Children>
-              <AbstractNodeData Name="gameOver_6" ActionTag="-1615717025" Tag="26" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="305.0017" RightMargin="304.9983" TopMargin="227.2999" BottomMargin="1457.7001" ctype="SpriteObjectData">
+              <AbstractNodeData Name="gameOver_6" ActionTag="-1615717025" Tag="26" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="305.0000" RightMargin="305.0000" TopMargin="227.3000" BottomMargin="1457.7000" ctype="SpriteObjectData">
                 <Size X="926.0000" Y="588.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                <Position X="768.0017" Y="2045.7001" />
+                <Position X="768.0000" Y="2045.7000" />
                 <Scale ScaleX="0.7851" ScaleY="0.7851" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.9000" />
@@ -299,10 +299,10 @@
                 <FileData Type="Normal" Path="Assets/Images/resources-4x/gameOver.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gameOverScore" ActionTag="1321474465" Tag="27" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="621.5040" RightMargin="621.4960" TopMargin="899.3766" BottomMargin="1143.6234" FontSize="100" LabelText="Score&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="gameOverScore" ActionTag="1321474465" Tag="27" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="621.5000" RightMargin="621.5000" TopMargin="899.4399" BottomMargin="1143.5601" FontSize="100" LabelText="Score&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="293.0000" Y="230.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="768.0040" Y="1258.6234" />
+                <Position X="768.0000" Y="1258.5601" />
                 <Scale ScaleX="1.9196" ScaleY="1.9196" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5537" />
@@ -311,7 +311,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="gameOverScoreLabel" ActionTag="-1703800837" Tag="28" IconVisible="False" LeftMargin="740.4951" RightMargin="742.5049" TopMargin="1142.7365" BottomMargin="900.2635" FontSize="100" LabelText="0&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="gameOverScoreLabel" ActionTag="-1703800837" Tag="28" IconVisible="False" LeftMargin="740.4951" RightMargin="742.5049" TopMargin="1142.7366" BottomMargin="900.2635" FontSize="100" LabelText="0&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="53.0000" Y="230.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="766.9951" Y="1015.2635" />
@@ -323,23 +323,27 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="play" ActionTag="1502245924" Tag="30" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="565.6924" RightMargin="564.3076" TopMargin="1368.4951" BottomMargin="652.5049" ctype="SpriteObjectData">
+              <AbstractNodeData Name="play" ActionTag="243270764" Tag="25" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="566.0073" RightMargin="563.9927" TopMargin="1368.4946" BottomMargin="652.5053" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="376" Scale9Height="230" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="406.0000" Y="252.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="768.6924" Y="778.5049" />
-                <Scale ScaleX="0.7430" ScaleY="0.7430" />
+                <Position X="769.0073" Y="778.5053" />
+                <Scale ScaleX="0.8260" ScaleY="0.8260" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5005" Y="0.3425" />
+                <PrePosition X="0.5007" Y="0.3425" />
                 <PreSize X="0.2643" Y="0.1109" />
-                <FileData Type="Normal" Path="Assets/Images/resources-4x/button.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Normal" Path="Assets/Images/resources-4x/buttonPressed.png" Plist="" />
+                <NormalFileData Type="Normal" Path="Assets/Images/resources-4x/button.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-            <Position X="320.0096" Y="1381.1149" />
+            <Position X="320.0096" Y="960.0000" />
             <Scale ScaleX="0.4927" ScaleY="0.4927" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="1.4387" />
+            <PrePosition X="0.5000" Y="1.0000" />
             <PreSize X="2.4000" Y="2.3677" />
             <FileData Type="Normal" Path="Assets/Images/resources-4x/mat.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
