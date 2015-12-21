@@ -78,38 +78,10 @@
               <Image Name="title.png" />
             </Folder>
           </Folder>
-          <Folder Name="Ground">
-            <Image Name="08.png" />
-            <Image Name="09.png" />
-            <Image Name="10.png" />
-            <Image Name="11.png" />
-            <Image Name="12.png" />
-            <Image Name="a1.png" />
-            <Image Name="a2.png" />
-            <Image Name="a3.png" />
-            <Image Name="a4.png" />
-            <Image Name="a5.png" />
-            <Image Name="a6.png" />
-            <Image Name="a7.png" />
-          </Folder>
-          <Folder Name="Walking">
-            <Image Name="1__000.png" />
-            <Image Name="1__001.png" />
-            <Image Name="1__002.png" />
-            <Image Name="1__003.png" />
-            <Image Name="1__004.png" />
-            <Image Name="1__005.png" />
-            <Image Name="1__006.png" />
-            <Image Name="1__007.png" />
-          </Folder>
-          <Folder Name="Axe">
-            <Image Name="Axe.png" />
-            <Image Name="Axe_2.png" />
-          </Folder>
         </Folder>
         <Project Name="Caracter.csd" Type="Node" />
         <Project Name="Piece.csd" Type="Node" />
-        <Project Name="Test.csd" Type="Node" />
+        <TTF Name="Game of Three.ttf" />
       </RootFolder>
     </Group>
   </SolutionFolder>

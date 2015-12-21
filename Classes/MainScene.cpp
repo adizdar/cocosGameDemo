@@ -11,6 +11,7 @@ USING_NS_CC;
 using namespace cocostudio::timeline;
 using namespace std;
 using namespace cocos2d;
+using namespace cocos2d::ui;
 
 Scene* MainScene::createScene()
 {
@@ -61,6 +62,7 @@ void MainScene::onEnter()
     this->flyingPiecePosition = this->pieceNode->getPosition();
     
     this->setupTouchHandling();
+    this->onPlayBtnTap();
     this->triggerTitle();
     this->scheduleUpdate(); // trigger update loop
 }
@@ -74,7 +76,10 @@ void MainScene::setupTouchHandling()
         // get the location of the touch in the MainScene's coordinate system
         Vec2 touchLocation = this->convertTouchToNodeSpace(touch);
         
+        if (this->gameState == GameState::GameOver) return true;
+        
         switch (this->gameState) {
+                
             case GameState::Title:
                 this->triggerReady();
                 break;
@@ -89,7 +94,8 @@ void MainScene::setupTouchHandling()
             case GameState::GameOver:
                 this->resetGameState();
                 this->triggerReady();
-                return true;
+                break;
+                
         }
         
         // check if the touch was on the left or right side of the screen
@@ -269,6 +275,20 @@ void MainScene::triggerGameOver()
 {
     this->gameState = GameState::GameOver;
     this->setTimeLeft(0);
+    
+    // get a reference to the top-most node
+    auto scene = this->getChildByName("Scene");
+    Sprite* gameOverScreen = dynamic_cast<Sprite*>(scene->getChildByName("mat"));
+    
+    // get a reference to the game over score label
+    Text* gameOverScoreLabel = gameOverScreen->getChildByName<Text*>("gameOverScoreLabel");
+    
+    // set the score label to the user's score
+    gameOverScoreLabel->setString(std::to_string(this->score));
+    
+    // load and run the game over animations
+   // this->stopAllActions();
+    triggerActionTimeline("gameOver", false);
 }
 
 void MainScene::triggerTitle()
@@ -326,7 +346,7 @@ void MainScene::triggerActionTimeline(string animationName, bool loop)
     ActionTimeline* timeline = CSLoader::createTimeline("MainScene.csb");
     ERROR_HANDLING(timeline);
     
-    this->stopAllActions(); // cancel any currently running actions on MainScene
+    //this->stopAllActions(); // cancel any currently running actions on MainScene
     this->runAction(timeline); // we tell MainScene to run the timeline
     timeline->play(animationName, loop);
     
@@ -389,6 +409,25 @@ void MainScene::animateHitPiece(Side obstacleSide)
     
 }
 
+void MainScene::onPlayBtnTap()
+{
+    auto rootNode = CSLoader::createNode("MainScene.csb");
+    auto gameOverSprite = rootNode->getChildByName("mat");
+    Sprite* playButton = dynamic_cast<Sprite*>(gameOverSprite->getChildByName("play"));
+    
+    auto touchListener = EventListenerTouchOneByOne::create();
+    
+    touchListener->onTouchBegan = [&](Touch* touch, Event* event) {
+        
+        CCLOG("%s", "a");
+        
+        return true;
+    };
+    
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, playButton);
+    
+   // Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, playButton);
+}
 
 
 
