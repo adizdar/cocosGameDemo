@@ -3,6 +3,17 @@
 
 USING_NS_CC;
 
+typedef struct tagResource
+{
+    cocos2d::Size size;
+    char directory[100];
+}Resource;
+
+static Resource smallResource  =  { cocos2d::Size(480, 320),   "iphone" };
+static Resource mediumResource =  { cocos2d::Size(1024, 768),  "ipad"   };
+static Resource largeResource  =  { cocos2d::Size(2048, 1536), "ipadhd" };
+static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
+
 AppDelegate::AppDelegate() {
 
 }
@@ -23,9 +34,11 @@ void AppDelegate::initGLContextAttrs()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+    
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
+    
     if(!glview) {
         glview = GLViewImpl::createWithRect("CocosProject1", Rect(0, 0, 960, 640));
         director->setOpenGLView(glview);
@@ -44,23 +57,41 @@ bool AppDelegate::applicationDidFinishLaunching() {
     std::vector<std::string> searchResolutionsOrder(1);
     
     cocos2d::Size targetSize = glview->getFrameSize();
+    CCLOG("%f", targetSize.height);
     
-    if (targetSize.height < 481.0f)
-    {
-        searchResolutionsOrder[0] = "resources-1x";
-    }
-    else if (targetSize.height < 1137.0f)
-    {
-        searchResolutionsOrder[0] = "resources-2x";
-    }
-    else if (targetSize.height < 2047.0f)
+    // if the frame's height is larger than the height of medium resource size, select large resource.
+    if (targetSize.height > mediumResource.size.height)
     {
         searchResolutionsOrder[0] = "resources-3x";
     }
+    // if the frame's height is larger than the height of small resource size, select medium resource.
+    else if (targetSize.height > smallResource.size.height)
+    {
+        searchResolutionsOrder[0] = "resources-2x";
+    }
+    // if the frame's height is smaller than the height of medium resource size, select small resource.
     else
     {
-        searchResolutionsOrder[0] = "resources-4x";
+        searchResolutionsOrder[0] = "resources-1x";
+        
     }
+    
+//    if (targetSize.height < 481.0f)
+//    {
+//        searchResolutionsOrder[0] = "Assets/Images/resources-1xa";
+//    }
+//    else if (targetSize.height < 1137.0f)
+//    {
+//        searchResolutionsOrder[0] = "Assets/Images/resources-2xa";
+//    }
+//    else if (targetSize.height < 2047.0f)
+//    {
+//        searchResolutionsOrder[0] = "Assets/Images/resources-3xa";
+//    }
+//    else
+//    {
+//        searchResolutionsOrder[0] = "Assets/Images/resources-4xa";
+//    }
     
     FileUtils::getInstance()->setSearchResolutionsOrder(searchResolutionsOrder);
 
